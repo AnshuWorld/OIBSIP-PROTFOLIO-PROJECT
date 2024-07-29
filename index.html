@@ -1,136 +1,245 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box;
+		}
+		.header{
+			padding:1.3rem;
+			display:flex;
+			justify-content:space-between;
+			background-color:cyan;
+			font-size:30px;
+		}
+		.navbar a{
+			padding:1.3rem;
+			font-size:20px;
+		}
+		.navbar a:hover{
+			background-color:green;
+		}
+		.icon{
+			display:none;
+		}
+		@media screen and (max-width:700px)
+		{
+			.navbar{
+				display:none;
+				position:absolute;
+				top:3.7rem;
+				left:0;
+				text-align:center;
+				background-color:cyan;
+				width:100%;
+			}
+			.navbar a, .navbar.resp, .icon{
+				display:block;
+			}
+			.icon{
+				z-index:1;
+			}
+		}
+		.container{
+			display:grid;
+			row-gap:20px;
+			column-gap:20px;
+			grid-template-areas: "abu abu abu abu"
+								 "pho pho exp exp"
+								 "ftr ftr ftr ftr"
+								 "skl skl skl skl"
+								 "prj prj prj prj"
+								 "pr1 pr1 pr2 pr2"
+								 "cnt cnt cnt cnt"
+								 "frm frm frm frm";
+		}
+		#box-1{
+			grid-area:abu;
+			background-color:green;
+			color:blue;
+			height:10vh;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+		#box-2{
+			grid-area:pho;
+			background-color:lightyellow;
+			color:black;
+			height:65vh;
+			width:45vw;
+		}
+		#box-3{
+			grid-area:exp;
+			background-color:lightyellow;
+			color:blue;
+			height:65vh;
+			width:48vw;
+			padding:20%;
+			font-family:monospace;
+			font-size:2.2vh;
+		}
+		#box-4{
+			grid-area:ftr;
+			background-color:green;
+			color:blue;
+			height:10vh;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			margin-bottom:40px;
+		}
+		#box-5{
+			grid-area:skl;
+			margin-left:20px;
+			margin-right:20px;
+		}
+		#box-6{
+			grid-area:prj;
+			background-color:green;
+			color:blue;
+			height:10vh;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			margin-bottom:40px;
+		}
+		#box-7{
+			grid-area:pr1;
+			background-color:lightyellow;
+			color:black;
+			height:30vh;
+			width:47vw;
+			font-family:monospace;
+			font-size:2.2vh;
+			column-gap:25px;
+			
+		}
+		#box-8{
+			grid-area:pr2;
+			background-color:lightyellow;
+			color:black;
+			height:30vh;
+			width:47vw;
+			font-family:monospace;
+			font-size:2.2vh;
+			
+		}
+		#box-9{
+			grid-area:cnt;
+			background-color:green;
+			color:blue;
+			height:10vh;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			margin-top:200px;
+			
+		}
+		#box-10{
+			grid-area:frm;
+			background-color:black;
+			color:green;
+			height:40vh;
+			padding:20%;
+		}
+		.con{
+		  width: 100%; /* Full width */
+		  background-color: #ddd; /* Grey background */
+		}
 
-<head>
-    <title>Page Title</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-</head>
+		.skills {
+		  text-align: right; 
+		  padding-top: 10px; 
+		  padding-bottom: 10px; 
+		  color: white; 
+		}
 
-<body>
-    <div class="preloader">
-        <div class="loading">
-            <span class="fa fa-spinner fa-spin"></span>
-            <h1 class="animated bounceIn infinite">wait a minute</h1>
-        </div>
-    </div>
+		.html {width: 90%; background-color: black; margin-top:30px; margin-bottom:30px;} 
+		.css {width: 80%; background-color: blue; margin-top:30px; margin-bottom:30px;} 
+		.js {width: 60%; background-color: red; margin-top:30px; margin-bottom:100px;}
+		
+		</style>
+	</head>
+	<body>
+		<div class="header" id="header">
+			<div class="title" id="title">
+				<p>Amrit Keshari</p>
+			</div>
+			<a class="icon" id="icon" onclick="fun()">
+				<p>&#9776</p>
+			</a>
+			<div class="navbar" id="navbar">
+				<a href="#home">Home</a>
+				<a href="#skills">Skills</a>
+				<a href="#projects">Projects</a>
+				<a href="#contacts">Contacts</a>
+			</div>
+		</div>
+		<div class="container">
+			<div id="box-1">
+				<h1 id="home">About Me</h1>
+			</div>
+			<div id="box-2">
+			 <img src="owner.jpeg" height="100%" width="100%"/>
+			</div>
+			<div id="box-3">
+			 <p>Myself Amritanshu Keshari, a web enthusiast. I have completed my diploma in Engineering in Computer Science Engineering from Government Polytechnic Adityapur. Now I am pursuing my B.Tech degree in Computer Science Engineering from Government Engineering College, West Champaran. </p>
+			</div>
+			<div id="box-4" >
+			 <h1 id="skills">My Skills</h1>
+			</div>
+			<div id="box-5">
+				<p>HTML</p>
+				<div class="con">
+				  <div class="skills html">90%</div>
+				</div>
+				<p>CSS</p>
+				<div class="con">
+				  <div class="skills css">80%</div>
+				</div>
 
-    <nav>
-        <div class="nav-icon">
-            <i class="fa fa-bars"></i>
-        </div>
-        <div class="navbar">
-            <div class="nav-mask"></div>
-            <ul class="nav-menu">
-                <li class="nav-toggle"><i class="fa fa-arrow-left"></i></li>
-                <li><a class="nav-link" href="#home">Home</a></li>
-                <li><a class="nav-link" href="#about">About Me</a></li>
-                <li><a class="nav-link" href="#skill">Skills</a></li>
-                <li><a class="nav-link" href="#project">Project</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section id="home" class="banner">
-        <img src="2.jpg" alt="photo" />
-        <h1>Amritanshu Keshari</h1>
-        <h3>
-            Community Manager at CodingIdol
-        </h3>
-        <p>19 Years Old Frontend Web Developer</p>
-    </section>
-
-    <section id="about" class="about wow fadeInUp slow">
-        <code>
-      <p class="summary">
-<span class="info">I am working at <i class="point">CodingIdol</i> from <span class="point-light">October 2023</span> as a Community Manager where I managing the social media team, web development team and program management team. I have launched python tutorial in our Community.<br></span>
-<span class="info">I have done my Internship from <i class="point">Oasis Infobyte</i> in Web Development.<br></span>
-<span class="info">I have got Inspire Award Manak from <span class="point-light">Government Of India (Department of Science and Technology)</span> for my science project on <span class="point-light">Hydrogen Fuel.</span><br></span>
-      </p>
-    </code>
-    </section>
-
-    <section id="skill" class="skill wow fadeIn slower">
-        <h2> My Skills </h2>
-        <ul>
-            <li>
-                <p>
-                    <span>HTML</span>
-                    <small class="wow fadeInLeft" prof="90"> 90% </small>
-                </p>
-            </li>
-            <li>
-                <p>
-                    <span>CSS</span>
-                    <small class="wow fadeInLeft" prof="50">50%</small>
-                </p>
-            </li>
-            <li>
-                <p>
-                    <span>Bootstrap</span>
-                    <small prof="50" class="wow fadeInLeft">50%</small>
-                </p>
-            </li>
-            <li>
-                <p>
-                    <span>JavaScript</span>
-                    <small prof="50" class="wow fadeInLeft">50%</small>
-                </p>
-            </li>
-            <li>
-                <p>
-                    <span>C++</span>
-                    <small prof="50" class="wow fadeInLeft">50%</small>
-                </p>
-            </li>
-        </ul>
-    </section>
-
-    <section id="project" class="project">
-        <h2 class="wow fadeInLeft slow"> My Projects </h2>
-        <div class="gallery wow fadeInLeft">
-            <a href="https://amrittemperatureconverter.netlify.app/">
-                <img alt="project1" class="big"
-                    src="proj1.png" />
-            </a>
-            <a href="https://csssproject.netlify.app/">
-                <img alt="project2" class="small"
-                    src="proj2.png" />
-            </a>
-            <br class="clear" />
-            <a href="https://bootstrapuwak.netlify.app/">
-                <img alt="project3" class="small"
-                    src="proj3.png" />
-            </a>
-
-            <br class="clear" />
-        </div>
-    </section>
-
-    <footer id="contact" class="contact wow fadeInUp slow">
-        <h2> My Contacts </h2>
-        <div>
-            <i class="fa fa-envelope"></i>
-            <span class="info">Email ID : </span> amritkumargecian@gmail.com
-        </div>
-        <div>
-            <i class="fa fa-whatsapp"></i>
-            <span class="info">WhatsApp : </span>
-            +916205921144
-        </div>
-        <div>
-            <i class="fa fa-github"></i>
-            <span class="info">Github : </span>
-            <a href="https://github.com/AnshuWorld">
-                https://github.com/AnshuWorld
-            </a>
-        </div>
-    </footer>
-    <div class="last-line"></div>
-    <script src="script.js"></script>
-</body>
+				<p>JavaScript</p>
+				<div class="con">
+				  <div class="skills js">60%</div>
+				</div>
+			</div>
+			<div id="box-6" >
+			 <h1 id="projects">My Projects</h1>
+			</div>
+			<div id="box-7">
+			<a href="https://oibsipinternshiptask1.netlify.app/">
+				<img src="proj1.png" width="100%"/>
+			</a>
+			<h3> TEMPERATURE CONVERTER </h3>
+			</div>
+			<div id="box-8">
+			<a href="https://oibsipinternshiptask3.netlify.app/">
+				<img src="proj3.png" width="100%"/>
+			</a>
+			<h3> LIBRARY WEBSITE </h3>
+			</div>
+			<div id="box-9">
+				<h1 id="contacts"> My Contacts </h1>
+			</div>
+			<div id="box-10">
+				<h3>Address:</h3>
+				<address><a href="">F-34/ C2 / Auxinma Ways, New Jersey, U.S.A.</a></address>
+				<h3>Email ID:</h3>
+				<a href="mailto:cseamritanshukeshari@gmail.com">cseamritanshukeshari@gmail.com</a>
+				<h3>Contact Number:</h3>
+				<a href="tel:6205921144">6205921144</a>
+			</div>
+		</div>
+		<script>
+			function fun()
+			{
+			var nav = document.getElementById('navbar');
+			var res = 'resp';
+			nav.classList.toggle(res);
+			}
+		</script>
+	</body>
 </html>
