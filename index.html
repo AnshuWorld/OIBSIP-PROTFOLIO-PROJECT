@@ -7,11 +7,37 @@
 			padding:0;
 			box-sizing:border-box;
 		}
+		h1{
+			color:var(--setion-olor);
+		}
+		#box-1,#box-4,#box-6,#box-9{
+			background-color: var(--setion-bakk);
+		}
+		:root{
+			--header-olor:rgb(17, 232, 139);
+			--header-text:rgb(0,0,0);
+			--footer-olor:rgba(202, 183, 183, 0.673);
+			--setion-olor:rgb(0,0,200);
+			--setion-bakk:rgb(0,250,0);
+			--box-olor:rgb(0,0,0);
+			--box-bakk:yellow;
+
+
+		}
+		.dark{
+			--header-olor:rgb(1, 13, 4);
+			--header-text:rgb(200,200,200);
+			--footer-olor:rgb(7, 5, 5);
+			--setion-olor:rgb(170, 243, 152);
+			--setion-bakk:rgb(2, 20, 2);
+			--box-olor:rgb(249, 241, 241);
+			--box-bakk:rgb(16, 16, 2);
+		}
 		.header{
 			padding:1.3rem;
 			display:flex;
 			justify-content:space-between;
-			background-color:cyan;
+			background-color:var(--header-olor);
 			font-size:30px;
 		}
 		.navbar a{
@@ -57,7 +83,7 @@
 		}
 		#box-1{
 			grid-area:abu;
-			background-color:green;
+			background-color:var(--setion-bakk);
 			color:blue;
 			height:10vh;
 			display:flex;
@@ -73,8 +99,8 @@
 		}
 		#box-3{
 			grid-area:exp;
-			background-color:lightyellow;
-			color:blue;
+			background-color:var(--box-bakk);
+			color:var(--box-olor);
 			height:65vh;
 			width:48vw;
 			padding:20%;
@@ -83,7 +109,7 @@
 		}
 		#box-4{
 			grid-area:ftr;
-			background-color:green;
+			background-color:var(--setion-bakk);
 			color:blue;
 			height:10vh;
 			display:flex;
@@ -98,7 +124,7 @@
 		}
 		#box-6{
 			grid-area:prj;
-			background-color:green;
+			background-color:var(--setion-bakk);
 			color:blue;
 			height:10vh;
 			display:flex;
@@ -129,7 +155,7 @@
 		}
 		#box-9{
 			grid-area:cnt;
-			background-color:green;
+			background-color:var(--setion-bakk);
 			color:blue;
 			height:10vh;
 			display:flex;
@@ -140,14 +166,14 @@
 		}
 		#box-10{
 			grid-area:frm;
-			background-color:black;
+			background-color:var(--footer-olor);
 			color:green;
 			height:40vh;
 			padding:20%;
 		}
 		.con{
-		  width: 100%; /* Full width */
-		  background-color: #ddd; /* Grey background */
+		  width: 100%; 
+		  background-color: grey; 
 		}
 
 		.skills {
@@ -156,11 +182,18 @@
 		  padding-bottom: 10px; 
 		  color: white; 
 		}
-
+		button{
+			padding: 1%;
+		}
+		a{
+			text-decoration: none;
+		}
 		.html {width: 90%; background-color: black; margin-top:30px; margin-bottom:30px;} 
 		.css {width: 80%; background-color: blue; margin-top:30px; margin-bottom:30px;} 
 		.js {width: 60%; background-color: red; margin-top:30px; margin-bottom:100px;}
-		
+		.title{
+			color:var(--header-text)
+		}
 		</style>
 	</head>
 	<body>
@@ -168,8 +201,9 @@
 			<div class="title" id="title">
 				<p>Amrit Keshari</p>
 			</div>
+			<button onclick="myFun()">Dark Mode</button>
 			<a class="icon" id="icon" onclick="fun()">
-				<p>&#9776</p>
+				<p class="title" >&#9776</p>
 			</a>
 			<div class="navbar" id="navbar">
 				<a href="#home">Home</a>
@@ -239,6 +273,11 @@
 			var nav = document.getElementById('navbar');
 			var res = 'resp';
 			nav.classList.toggle(res);
+			}
+			function myFun() 
+			{
+			var ont = document.body;
+			ont.classList.toggle("dark");
 			}
 		</script>
 	</body>
